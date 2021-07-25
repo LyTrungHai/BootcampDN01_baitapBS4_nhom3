@@ -28,55 +28,56 @@
 </head>
 
 <body id="myBody">
-  <header class="container fixed-top">
-    <nav class="navbar navbar-expand">
-      <a class="navbar-brand" href="#">
-        <i class="fa fa-leaf" aria-hidden="true"></i>
-        <span>Farmstead</span>
-      </a>
+  <header class="sticky fixed-top">
+    <div class="container">
+      <nav class="navbar navbar-expand">
+        <a class="navbar-brand" href="#">
+          <i class="fa fa-leaf" aria-hidden="true"></i>
+          <span>Farmstead</span>
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <!-- my-2 my-lg-0 my-2 my-sm-0 -->
+            <div class="content">
+              <div class="search-bar">
+                <input class="search-txt" type="text" placeholder="" aria-label="Search">
+                <button class="search-btn" type="submit">
+                  <i class="fa fa-search"></i>
+                </button>
+              </div>
+            </div>
 
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <!-- my-2 my-lg-0 my-2 my-sm-0 -->
-          <div class="content">
-            <div class="search-bar">
-              <input class="search-txt" type="text" placeholder="" aria-label="Search">
-              <button class="search-btn" type="submit">
-                <i class="fa fa-search"></i>
+            <!-- "style="width: 18rem;" class="ml-lg-auto py-3" -->
+            <div class="container mr-n2">
+              <button class="btn" id="switchButton" title="Click to switch theme">
+                <i id="switch" class="fa fa-moon-o" aria-hidden="true"></i>
+                <i id="switch" class="fa fa-sun-o" aria-hidden="true"></i>
               </button>
+
             </div>
-          </div>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                <i class="fa fa-bars"></i>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item active" href="#">HOME</a>
+                <a class="dropdown-item" href="#">ABOUT</a>
+                <a class="dropdown-item" href="#">SERVICES</a>
+                <a class="dropdown-item" href="#">BLOG POSTS</a>
+                <a class="dropdown-item" href="#">LANDING PAGE</a>
+                <a class="dropdown-item" href="#">ELEMENTS PAGE</a>
+                <a class="dropdown-item" href="#">404 PAGE</a>
+                <a class="dropdown-item" href="#">CONTACT</a>
+              </div>
+            </li>
 
-          <!-- "style="width: 18rem;" class="ml-lg-auto py-3" -->
-          <div class="container mr-n2">
-            <button class="btn" id="switchButton" title="Click to switch theme">
-              <i class="fa fa-moon-o" aria-hidden="true"></i>
-              <i class="fa fa-sun-o" aria-hidden="true"></i>
-            </button>
+          </ul>
 
-          </div>
-          <li class="nav-item dropdown">
-            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">
-              <i class="fa fa-bars"></i>
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item active" href="#">HOME</a>
-              <a class="dropdown-item" href="#">ABOUT</a>
-              <a class="dropdown-item" href="#">SERVICES</a>
-              <a class="dropdown-item" href="#">BLOG POSTS</a>
-              <a class="dropdown-item" href="#">LANDING PAGE</a>
-              <a class="dropdown-item" href="#">ELEMENTS PAGE</a>
-              <a class="dropdown-item" href="#">404 PAGE</a>
-              <a class="dropdown-item" href="#">CONTACT</a>
-            </div>
-          </li>
+        </div>
+      </nav>
+    </div>
 
-        </ul>
-
-      </div>
-    </nav>
   </header>
 
   <section class="carouselFarm">
@@ -202,9 +203,41 @@
 
   <script>
     document.getElementById("switchButton").onclick = function () {
-      document.getElementById("myBody").classList.toggle("dark");
-    };
+      document.getElementById("myBody").classList.toggle("dark")
+    }
   </script>
+
+  <script>
+    // var header = document.getElementById('header');
+    // var bodyDark = document.getElementById("myBody");
+    // var bodyLight = document.querySelector(".dark#myBody")
+    // var button = document.getElementById("switchButton");
+    // // var dropDown = document.getElementById("navbarDropdown");
+    // window.onscroll = function () {
+    //   if (window.pageYOffset > 100) {
+    //     header.style.background = "#060606";
+    //     bodyDark.button.style.color = "white";
+    //     // header.style.boxShadow = "0 3px 9px rgb(0 0 0 / 5%)";
+    //     // button.style.color = "#060606";
+    //   }
+    //   else {
+    //     header.style.background = "transparent";
+    //     bodyDark.button.style.color = "none";
+
+    //     // header.style.boxShadow = "none";
+    //     // button.style.color = "none";
+    //   }
+    // }
+
+    window.addEventListener("scroll", function(){
+      var header = document.querySelector("header");
+      header.classList.toggle("sticky",window.scrollY >0);
+    })
+
+
+
+  </script>
+
 
 
 
